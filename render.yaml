@@ -10,6 +10,11 @@ services:
         fromDatabase:
           name: elephant
           property: connectionString
+    scaling:
+      minInstances: 1
+      maxInstances: 2
+      targetMemoryPercent: 75 # optional if targetCPUPercent is set (valid: 1-90)
+      targetCPUPercent: 75
 databases:
   - name: elephant
     databaseName: metabasedb
